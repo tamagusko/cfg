@@ -2,14 +2,37 @@
 
 Just work configuration.
 
-1. Update system: sudo apt update && sudo apt upgrade or pacman -Syyu
-2. Install nvidia driver
-3. Enable Firewall
-4. Fix cedilla
+## Update system: 
+
+sudo apt update && sudo apt upgrade or pacman -Syyu
+
+## Install support apps
+
+sudo apt install wget curl git -y
+
+## Install nvidia driver
+
+## Enable Firewall
+
+## Fix cedilla
+
+wget -q https://raw.githubusercontent.com/marcopaganini/gnome-cedilla-fix/master/fix-cedilla -O fix-cedilla
+chmod 755 fix-cedilla
+./fix-cedilla
+
 5. Login Google
+
 6. Login Firefox
+
 7. Install ZSH
+
+sudo apt install zsh -y
+sudo chsh -s /usr/bin/zsh $USER
+
 8. Install oh-my-zsh
+
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+
 9. install neovim
 10. install https://github.com/NvChad/NvChad
 11. install copilot
