@@ -1,10 +1,10 @@
 # Under development
 
-Just work configuration.
+Simple  ubuntu/mint cfg to use at work.
 
 ## Update system: 
 
-sudo apt update && sudo apt upgrade or pacman -Syyu
+sudo apt update && sudo apt upgrade
 
 ## Install support apps
 
@@ -16,22 +16,50 @@ sudo apt install wget curl git -y
 
 ## Fix cedilla
 
-wget -q https://raw.githubusercontent.com/marcopaganini/gnome-cedilla-fix/master/fix-cedilla -O fix-cedilla
-chmod 755 fix-cedilla
+wget -q https://raw.githubusercontent.com/marcopaganini/gnome-cedilla-fix/master/fix-cedilla -O fix-cedilla  
+chmod 755 fix-cedilla  
 ./fix-cedilla
 
-5. Login Google
+## Login Google
 
-6. Login Firefox
+## Login Firefox
 
-7. Install ZSH
+## Install ZSH
 
-sudo apt install zsh -y
+sudo apt install zsh -y  
 sudo chsh -s /usr/bin/zsh $USER
 
-8. Install oh-my-zsh
+## Install oh-my-zsh
 
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+
+## add plugins and alias do zsh:
+
+plugins=(
+    git
+    sudo
+    vscode
+    gitfast
+    command-not-found
+    gitignore
+    heroku
+    fzf
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    colored-man-pages
+    virtualenv
+)
+
+alias cd..='cd ..'
+alias h="history"
+alias vi=nvim
+alias svi='sudo vim'
+alias srun='python3 -m uvicorn --port 5000 --host 127.0.0.1 main:app --reload'
+alias yolov5env="source /home/t1/Downloads/yolov5_training_env/bin/activate"
+alias yolorenv="source /home/t1/Downloads/yolor_env/bin/activate"
+alias gitignorebig="find . -size +100M | cat >> .gitignore"
+alias vac="source venv/bin/activate"
+alias vmk="python3 -m virtualenv .venv"
 
 9. install neovim
 10. install https://github.com/NvChad/NvChad
