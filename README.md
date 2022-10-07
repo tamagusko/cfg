@@ -27,7 +27,9 @@ chmod 755 fix-cedilla
 ## Install ZSH
 
 sudo apt install zsh -y  
-sudo chsh -s /usr/bin/zsh $USER
+chsh -s $(which zsh)
+
+just log out and login
 
 ## Install oh-my-zsh
 
@@ -50,16 +52,33 @@ plugins=(
     virtualenv
 )
 
-alias cd..='cd ..'
-alias h="history"
-alias vi=nvim
-alias svi='sudo vim'
-alias srun='python3 -m uvicorn --port 5000 --host 127.0.0.1 main:app --reload'
-alias yolov5env="source /home/t1/Downloads/yolov5_training_env/bin/activate"
-alias yolorenv="source /home/t1/Downloads/yolor_env/bin/activate"
-alias gitignorebig="find . -size +100M | cat >> .gitignore"
-alias vac="source venv/bin/activate"
-alias vmk="python3 -m virtualenv .venv"
+alias cd..='cd ..'  
+alias h="history"  
+alias vi=nvim  
+alias svi='sudo vim'  
+alias srun='python3 -m uvicorn --port 5000 --host 127.0.0.1 main:app --reload'  
+alias yolov5env="source /home/t1/Downloads/yolov5_training_env/bin/activate"  
+alias yolorenv="source /home/t1/Downloads/yolor_env/bin/activate"  
+alias gitignorebig="find . -size +100M | cat >> .gitignore"  
+alias vac="source venv/bin/activate"  
+alias vmk="python3 -m virtualenv .venv"  
+alias python=python3
+
+## add missing plugins
+
+sudo apt install fzf  
+cd ~/.oh-my-zsh/plugins/  
+git clone https://github.com/zsh-users/zsh-syntax-highlighting  
+git clone https://github.com/zsh-users/zsh-autosuggestions
+
+## install powerlevel10k
+
+https://github.com/romkatv/powerlevel10k
+
+## install Papirus icons:
+
+sudo add-apt-repository ppa:papirus/papirus  
+sudo apt update && sudo apt install papirus-icon-theme
 
 9. install neovim
 10. install https://github.com/NvChad/NvChad
@@ -78,4 +97,4 @@ alias vmk="python3 -m virtualenv .venv"
   - ctrl+alt+t: terminal
   - ctrl+alt+p: pomodoro
   - mod+r: ranger
-  - ctrl+q: close apps
+  - ctrl+q: close apps (window manager)
