@@ -38,17 +38,17 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 ## add plugins and alias do zsh:
 
 plugins=(
-    git
-    sudo
-    vscode
-    gitfast
-    command-not-found
-    gitignore
-    heroku
-    fzf
-    zsh-syntax-highlighting
-    zsh-autosuggestions
-    colored-man-pages
+    git  
+    sudo 
+    vscode  
+    gitfast  
+    command-not-found  
+    gitignore  
+    heroku  
+    fzf  
+    zsh-syntax-highlighting 
+    zsh-autosuggestions  
+    colored-man-pages  
     virtualenv
 )
 
