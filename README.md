@@ -1,4 +1,4 @@
-# Configuration for fresh installs
+# Configuration files
 
 Roadmap with steps for fresh installations
 
