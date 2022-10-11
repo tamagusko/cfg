@@ -7,7 +7,8 @@ Super+X -> Lockscreen
 Super+Shift+S -> Shutdown
 Super+Drag -> Float Windows
 Super+Keys -> Change Focus
-Super+Shift+Keys -> Move Windows
+Super+Numbers -> Change WS
+Super+Shift+Keys -> Move Windows to WS
 Super+H -> Split Horizontal
 Super+V -> Split Vertical
 Super+S -> layout stacking
