@@ -1,6 +1,6 @@
 # Configuration for fresh installs
 
-This should not be replicated by others.
+Roadmap with steps for fresh installations
 
 ## Simple is better than complex
 
