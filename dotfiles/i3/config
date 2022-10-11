@@ -164,7 +164,7 @@ for_window [class=texstudio|ghostwriter|libreoffice*] move to workspace $ws4; wo
 for_window [class=Thunar] move to workspace $ws5; workspace $ws5; focus
 for_window [class=slack|teams] move to workspace $ws6; workspace $ws6; focus
 for_window [class=Zoom|Audacity|Vlc|mpv|Gimp*|Inkscape] move to workspace $ws7; workspace $ws7; focus
-for_window [class="htop"] move to workspace $ws8; workspace $ws8; focus
+for_window [class="htop|btop"] move to workspace $ws8; workspace $ws8; focus
 for_window [class="weather"] move to workspace $ws9; workspace $ws9; focus
 for_window [class="logs"] move to workspace $ws10; workspace $ws10; focus
 
