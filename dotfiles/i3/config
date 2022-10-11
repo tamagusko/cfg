@@ -152,7 +152,7 @@ set $ws4 "4"  # Office
 set $ws5 "5"  # File Manager
 set $ws6 "6"  # Slack / Teams
 set $ws7 "7"  # Zoom / Streams / Multimedia
-set $ws8 "8"  # Performance
+set $ws8 "8"  # Settings
 set $ws9 "9"  # Weather
 set $ws10 "10"  # Logs
 
@@ -164,9 +164,9 @@ for_window [class=texstudio|ghostwriter|libreoffice*] move to workspace $ws4; wo
 for_window [class=Thunar] move to workspace $ws5; workspace $ws5; focus
 for_window [class=slack|teams] move to workspace $ws6; workspace $ws6; focus
 for_window [class=Zoom|Audacity|Vlc|mpv|Gimp*|Inkscape] move to workspace $ws7; workspace $ws7; focus
-for_window [class="htop|btop"] move to workspace $ws8; workspace $ws8; focus
-for_window [class="weather"] move to workspace $ws9; workspace $ws9; focus
-for_window [class="logs"] move to workspace $ws10; workspace $ws10; focus
+# for_window [class="Settings"] move to workspace $ws8; workspace $ws8; focus
+# for_window [class="weather"] move to workspace $ws9; workspace $ws9; focus
+# for_window [class="logs"] move to workspace $ws10; workspace $ws10; focus
 
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
