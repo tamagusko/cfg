@@ -2,36 +2,36 @@
 
 Simple  ubuntu/mint cfg to use at work.
 
-## Update system: 
+## update system: 
 
 sudo apt update && sudo apt upgrade
 
-## Install support apps
+## install support apps
 
 sudo apt install wget curl git -y
 
-## Install nvidia driver
+## install nvidia driver
 
-## Enable Firewall
+## enable Firewall
 
-## Fix cedilla
+## fix cedilla
 
 wget -q https://raw.githubusercontent.com/marcopaganini/gnome-cedilla-fix/master/fix-cedilla -O fix-cedilla  
 chmod 755 fix-cedilla  
 ./fix-cedilla
 
-## Login Google
+## login Google
 
-## Login Firefox
+## login Firefox
 
-## Install ZSH
+## install ZSH
 
 sudo apt install zsh -y  
 chsh -s $(which zsh)
 
 just log out and login
 
-## Install oh-my-zsh
+## install oh-my-zsh
 
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
@@ -55,7 +55,7 @@ plugins=(
 alias cd..='cd ..'  
 alias h="history"  
 alias vi=nvim  
-alias svi='sudo vim'  
+alias svi='sudo nvim'  
 alias srun='python3 -m uvicorn --port 5000 --host 127.0.0.1 main:app --reload'  
 alias yolov5env="source /home/t1/Downloads/yolov5_training_env/bin/activate"  
 alias yolorenv="source /home/t1/Downloads/yolor_env/bin/activate"  
@@ -66,7 +66,7 @@ alias python=python3
 
 ## add missing plugins
 
-sudo apt install fzf  
+sudo apt install fzf -y
 cd ~/.oh-my-zsh/plugins/  
 git clone https://github.com/zsh-users/zsh-syntax-highlighting  
 git clone https://github.com/zsh-users/zsh-autosuggestions
@@ -80,21 +80,50 @@ https://github.com/romkatv/powerlevel10k
 sudo add-apt-repository ppa:papirus/papirus  
 sudo apt update && sudo apt install papirus-icon-theme
 
-9. install neovim
-10. install https://github.com/NvChad/NvChad
-11. install copilot
-12. install apps: zoom, skype, slack, dropbox, teams
-13. install pomodoro: https://github.com/Splode/pomotroid/releases
-14. install range
-15. configuration of shortcuts:
-  - mod+ (left, up, down, right): tile windows
-  - alt+left: left workspace
-  - alt+right: right workspace
-  - ctrl+left: move to left workspace
-  - ctrl+right: move to right workspace
-  - ctrl+alt+f: Firefox
-  - ctrl+alt+e: File Manager
-  - ctrl+alt+t: terminal
-  - ctrl+alt+p: pomodoro
-  - mod+r: ranger
-  - ctrl+q: close apps (window manager)
+## install nodejs
+
+https://computingforgeeks.com/how-to-install-node-js-on-ubuntu-debian/
+
+## install neovim or vim 9:
+
+### neovim:
+
+Download appimage on:
+https://github.com/neovim/neovim/releases/tag/stable
+chmod u+x nvim.appimage
+sudo mv nvim.appimage /usr/local/bin 
+cd /usr/local/bin 
+sudo mv nvim.appimage nvim
+
+https://github.com/jdhao/nvim-config
+
+### vim: 
+
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt update
+sudo apt install vim -y
+sudo apt install vim-gtk -y
+https://github.com/amix/vimrc
+
+## install copilot
+
+https://github.com/github/copilot.vim
+
+
+## install apps: zoom, skype, slack, dropbox, teams
+
+## configuration of shortcuts:
+
+### Gnome
+
+
+### XFCE
+- mod+ (left, up, down, right): tile windows
+- alt+left: left workspace
+- alt+right: right workspace
+- ctrl+left: move to left workspace
+- ctrl+right: move to right workspace
+- mod+b: Firefox
+- mod+n: File Manager
+- mod+enter: terminal
+- ctrl+q: close apps (window manager)
