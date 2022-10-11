@@ -1,4 +1,20 @@
-Finish to map import keybinds here
 Keybinds 
 Super+Enter -> Terminal
-Super+b -> Firefox
+Ctrl+Q -> Close App
+Super+D -> Program Launcher
+Super+B -> Firefox
+Super+X -> Lockscreen
+Super+Shift+S -> Shutdown
+Super+Drag -> Float Windows
+Super+Keys -> Change Focus
+Super+Shift+Keys -> Move Windows
+Super+H -> Split Horizontal
+Super+V -> Split Vertical
+Super+S -> layout stacking
+Super+W -> layout tabbed
+Super+E -> layout toggle split
+Super+F -> FullScreen
+Super+R -> Rezise Mode
+
+
+ 
