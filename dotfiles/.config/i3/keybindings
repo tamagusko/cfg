@@ -49,8 +49,8 @@ F1
 # move a focused window
 +Shift+j move left
 +Shift+k move down
-+Shift+b move up
-+Shift+o move right
++Shift+l move up
++Shift+; move right
 
 # alternatively, you can use the cursor keys:
 +Shift+Left move left
@@ -69,7 +69,7 @@ F1
 
 # change container layout (stacked, tabbed, toggle split)
 +s layout stacking
-+g layout tabbed
++w layout tabbed
 +e layout toggle split
 
 # toggle tiling / floating
@@ -93,6 +93,6 @@ F1
 +p
 
 ## App shortcuts
-+w starts Firefox
++b starts Firefox
 +n starts Thunar
  Button screenshot
