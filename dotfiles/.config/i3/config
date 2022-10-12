@@ -26,6 +26,7 @@ font pango: Noto Sans Regular 14
 
 # set the mod key to the winkey:
 set $mod Mod4
+set $alt Mod1
 
 #####################
 # workspace layout: #
@@ -69,7 +70,7 @@ floating_modifier $mod
 
 # switch/iterate between workspaces
 bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+bindsym $alt+Tab workspace prev
 
 # switch to workspace
 bindsym $mod+1    workspace  $ws1
@@ -228,7 +229,9 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 bindsym $mod+b exec /usr/bin/firefox
 bindsym ctrl+Mod1+f exec /usr/bin/firefox
 bindsym $mod+n exec /usr/bin/thunar
-bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+bindsym Print exec maim ~/Pictures/$(date +"%Y-%m-%d-%T")-screenshot.png  && notify-send "Screenshot saved to ~/Pictures/$(date +"%Y-%m-%d-%T")-screenshot.png"
+# TODO (save selection area)
+# bindsym ctrl+Mod1+s exec maim ~/Pictures/$(date +"%Y-%m-%d-%T")-screenshot.png  && notify-send "Screenshot saved to ~/Pictures/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
@@ -247,19 +250,16 @@ bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 # Slack / Teams / Skype / Telegram
 # Zoom / Streams / Multimedia 
 # Settings / Performance
-# Weather
-# Logs / Monitoring
 
 set $ws1 "1:"  
 set $ws2 "2:"  
-set $ws3 "3:"  
-set $ws4 "4:"  
-set $ws5 "5:"  
-set $ws6 "6"     
-set $ws7 "7"     
-set $ws8 "8"     
-set $ws9 "9"     
-set $ws10 "10"   
+set $ws3 "3:"  
+set $ws4 "4:"  
+set $ws5 "5:"  
+set $ws6 "6:"     
+set $ws7 "7:"     
+set $ws8 "8:"     
+
 
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
@@ -273,16 +273,23 @@ set $ws10 "10"
 # bind program to workspace and focus to them on startup:
 assign [class="Xfce4-terminal"] $ws1
 assign [class="(?i)firefox"] $ws2
-assign [class="Thunar"] $ws3
-assign [class="Thunderbird"] $ws4
-assign [class="TelegramDesktop"] $ws5
+assign [class="code"] $ws3
+assign [class=texstudio|ghostwriter|libreoffice*] $ws4
+assign [class="Thunar"] $ws5
+assign [class=slack|teams] $ws6
+assign [class=Zoom|Audacity|Vlc|mpv|Gimp*|Inkscape] $ws7
+assign [class=btop|htop] $ws8
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=Xfce4-terminal] focus
 for_window [class=(?i)firefox] focus
+for_window [class=code] focus
+for_window [class=texstudio|ghostwriter|libreoffice*] focus
 for_window [class=Thunar] focus
-for_window [class=Thunderbird] focus
-for_window [class=TelegramDesktop] focus
+for_window [class=slack|teams] focus
+for_window [class=Zoom|Audacity|Vlc|mpv|Gimp*|Inkscape] focus
+for_window [class=btop|htop] focus
+
 
 ##############
 # compositor #
