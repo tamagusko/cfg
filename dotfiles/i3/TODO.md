@@ -8,5 +8,3 @@
 1. fix teams, zoom, btop, htop
 2. clean
 3. format
-
-

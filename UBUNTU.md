@@ -2,11 +2,11 @@
 
 Simple  ubuntu/mint cfg to use at work.
 
-# TODO: 
+# TODO:
 
 add gnome shortcuts
 
-## update system: 
+## update system:
 
 sudo apt update && sudo apt upgrade
 
@@ -43,14 +43,14 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 
 plugins=(
     git  
-    sudo 
+    sudo
     vscode  
     gitfast  
     command-not-found  
     gitignore  
     heroku  
     fzf  
-    zsh-syntax-highlighting 
+    zsh-syntax-highlighting
     zsh-autosuggestions  
     colored-man-pages  
     virtualenv
@@ -95,13 +95,13 @@ https://computingforgeeks.com/how-to-install-node-js-on-ubuntu-debian/
 Download appimage on:
 https://github.com/neovim/neovim/releases/tag/stable
 chmod u+x nvim.appimage
-sudo mv nvim.appimage /usr/local/bin 
-cd /usr/local/bin 
+sudo mv nvim.appimage /usr/local/bin
+cd /usr/local/bin
 sudo mv nvim.appimage nvim
 
 https://github.com/jdhao/nvim-config
 
-### vim: 
+### vim:
 
 sudo add-apt-repository ppa:jonathonf/vim
 sudo apt update
