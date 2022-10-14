@@ -22,7 +22,7 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango: Noto Sans Regular 14
+font pango: Noto Sans Regular 16
 
 # set the mod key to the winkey:
 set $mod Mod4
@@ -49,7 +49,7 @@ workspace_layout default
 #border indicator on windows:
 # new_window pixel 2
 # Window border (all windows)
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 2	
 
 # thin borders
 # hide_edge_borders both
@@ -82,7 +82,7 @@ bindsym $mod+7    workspace  $ws7
 bindsym $mod+8    workspace  $ws8
 bindsym $mod+9    workspace  $ws9
 bindsym $mod+0    workspace  $ws10
-
+	
 # move focused container to workspace
 bindsym $mod+Shift+1    move container to workspace  $ws1
 bindsym $mod+Shift+2    move container to workspace  $ws2
@@ -229,17 +229,17 @@ bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 # Office
 # File Manager
 # Slack / Teams / Skype / Telegram
-# Zoom / Streams / Multimedia
+# Zoom / Streams / Multimedia 
 # Settings / Performance
 
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
-set $ws7 "7:"
-set $ws8 "8:"
+set $ws1 "1:"  
+set $ws2 "2:"  
+set $ws3 "3:"  
+set $ws4 "4:"  
+set $ws5 "5:"  
+set $ws6 "6:"     
+set $ws7 "7:"     
+set $ws8 "8:"     
 
 
 # use workspaces on different displays:
@@ -255,20 +255,22 @@ set $ws8 "8:"
 assign [class=Xfce4-terminal] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [class=code] $ws3
-assign [class=TeXstudio|ghostwriter|libreoffice*] $ws4
+assign [class=TeXstudio|ghostwriter] $ws4
+assign [title="LibreOffice*"] $ws4
 assign [class=Thunar] $ws5
-assign [class=Slack|teams] $ws6
-assign [class=Zoom|Audacity|Vlc|mpv|Gimp*|Inkscape] $ws7
+assign [class=Slack|Teams] $ws6
+assign [class=zoom] $ws7
 assign [class=btop|htop] $ws8
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=Xfce4-terminal] focus
 for_window [class=(?i)firefox] focus
 for_window [class=code] focus
-for_window [class=TeXstudio|ghostwriter|libreoffice*] focus
+for_window [class=TeXstudio|ghostwriter] focus
+for_window [title="LibreOffice*"] focus
 for_window [class=Thunar] focus
-for_window [class=Slack|teams] focus
-for_window [class=Zoom|Audacity|Vlc|mpv|Gimp*|Inkscape] focus
+for_window [class=Slack|Teams] focus
+for_window [class=zoom] focus
 for_window [class=btop|htop] focus
 
 
@@ -291,10 +293,10 @@ for_window [class=btop|htop] focus
 #
 # picom: https://wiki.archlinux.org/title/Picom
 # manpage: https://man.archlinux.org/man/picom.1.en
-# The default configuration is available in /etc/xdg/picom.conf
+# The default configuration is available in /etc/xdg/picom.conf 
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
 #
-# using default config
+# using default config 
 exec_always --no-startup-id picom -b
 #
 # for custom config:
@@ -314,9 +316,6 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # https://github.com/jceb/dex
 #exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 exec --no-startup-id dex --autostart --environment i3
-
-# start welcome app
-#exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3
 
 # num lock activated
 exec --no-startup-id numlockx on
@@ -364,7 +363,7 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 #exec_always --no-startup-id autotiling
 
 # Autostart apps as you like
-exec --no-startup-id sleep 2 && xfce4-terminal
+exec --no-startup-id sleep 5 && xfce4-terminal && workspace $ws1
 #exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
 #exec --no-startup-id sleep 3 && thunar
 
@@ -406,7 +405,7 @@ for_window [class="urxvt"] border pixel 1
 
 # set size of floating window
 #for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog
-#for_window [class=".*"] resize set 640 480 #to change size of all floating windows
+#for_window [class=".*"] resize set 640 480 #to change size of all floating windows 
 
 # set position of floating window
 #for_window [class=".*"] move position center
@@ -442,7 +441,7 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
 bar {
-		font pango: Noto Sans Regular 10
+		font pango: Noto Sans Regular 11
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	    	position top
 #	    	i3bar_command i3bar --transparency
