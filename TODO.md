@@ -1,2 +1,3 @@
-1. Install taskwarrior
-2. Install notes (https://github.com/pimterry/notes)
+1. add brightness
+2. click on date clock open date
+3. clean
