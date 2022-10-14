@@ -8,7 +8,7 @@ sudo pacman -Syyu
 
 ## install support apps
 
-sudo pacman -S wget curl git zsh vim python-pip ufw --noconfirm
+sudo pacman -S wget curl git zsh vim python-pip ufw fzf --noconfirm
 
 ## install paru
 
@@ -31,7 +31,7 @@ sudo ufw enable
 
 ## login Firefox
 
-## fix cedilla
+## fix cedilla (TODO)
 
 1. Put: English(US, internacional) on your system keyboard layout.
 
@@ -61,8 +61,7 @@ QT_IM_MODULE=cedilla
 5.restart your computer
 
 ## install ZSH
-
-sudo apt install zsh -y  
+  
 chsh -s $(which zsh)
 
 Log out and login
