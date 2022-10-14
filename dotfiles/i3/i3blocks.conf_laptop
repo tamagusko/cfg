@@ -40,12 +40,12 @@
 separator=false
 markup=pango
 
-[Weather]
+#[Weather]
 #command=~/.config/i3/scripts/openweather
 # or:
-command=~/.config/i3/scripts/openweather-city
-interval=1800
-color=#7275b3
+#command=~/.config/i3/scripts/openweather-city
+#interval=1800
+#color=#7275b3
 
 ## Shortcuts
 
@@ -112,10 +112,10 @@ T_CRIT=90
 # can be used also for GPU temperature or other temperature sensors lm-sensors detects.
 
 # showing name of connected network (enable for wifi use)
-#[net]
-#label=
-#command=echo "$(LANG=C nmcli d | grep connected  | awk '{print $4}')"
-#interval=60
+[net]
+label=
+command=echo "$(LANG=C nmcli d | grep connected  | awk '{print $4}')"
+interval=60
 
 #[bandwidth]
 #command=~/.config/i3/scripts/bandwidth2
@@ -174,9 +174,9 @@ color=#717171
 #command=~/.config/i3/scripts/keyboard-layout
 #interval=2
 
-#[keybindings]
-#full_text=
-#command=~/.config/i3/scripts/keyhint
+[keybindings]
+full_text=
+command=~/.config/i3/scripts/keyhint
 
 [time]
 #label=
