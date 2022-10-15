@@ -7,7 +7,6 @@
 4. Fix cedilla (implement bash)
 5. Install zsh, configure zsh, oh-my-zsh, and powerlevel10k (implement bash)
 6. Configure neovim and install copilot (implement bash)
-7. Install latex (implement bash)
     
 ## Arch Xfce4:
 1. Create a new file /docs/Arch-xfce4.md
