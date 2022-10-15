@@ -55,6 +55,7 @@ PKGS=(
     neovim
     python-neovim
     code
+    cronie # cron implementation on archlinux
     python-pip
     papirus-icon-theme
     ufw # firewall 
@@ -132,6 +133,14 @@ git clone https://github.com/tamagusko/linux-cfg.git
 cd "linux-cfg"
 cp -r "/dotfiles/" "~/.config/"
 rm -rf "/opt/linux-cfg"
+
+# copy and load scripts
+echo
+echo "CREATING USER FOLDERS"
+echo
+
+mkdir ~/repos
+mkdir ~/venv
 
 clear
 

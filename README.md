@@ -26,7 +26,8 @@ Simple is better than complex.
 
 ---
 
-To contact me directly, send email to [tamagusko@gmail.com](mailto:tamagusko@gmail.com).
+Please direct bug reports and pull requests to the GitHub page. To contact me directly, send email to 
+[tamagusko@gmail.com](mailto:tamagusko@gmail.com).
 
 -- Tiago
 
