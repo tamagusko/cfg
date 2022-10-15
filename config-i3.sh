@@ -90,7 +90,7 @@ PKGS_AUR=(
 
 for PKG in "${PKGS_AUR[@]}"; do
     echo "INSTALLING: ${PKG}"
-    sudo paru -S --noconfirm "$PKG"
+    paru -S --noconfirm "$PKG"
 done
 
 # secure issues
@@ -128,19 +128,11 @@ echo
 echo "LOADING CONFIGURATION"
 echo
 
-cd "/opt"
-git clone https://github.com/tamagusko/linux-cfg.git
-cd "linux-cfg"
-cp -r "/dotfiles/" "~/.config/"
-rm -rf "/opt/linux-cfg"
-
-# copy and load scripts
-echo
-echo "CREATING USER FOLDERS"
-echo
-
 mkdir ~/repos
-mkdir ~/venv
+cd ~/repos
+git clone https://github.com/tamagusko/linux-cfg.git
+cd linux-cfg
+cp -r "~/repos/linux-cfg/dotfiles/" "~/.config/"
 
 clear
 
@@ -154,6 +146,7 @@ STEPS=(
     "STEP 3) Install zsh, oh-my-zsh, and powerlevel10k"
     "STEP 4) Configure zsh"
     "STEP 5) Configure neovim"
+    "STEP 6) Latex installation (scripts/latex_install.sh)"
     "See docs/ARCH.md for details"
 )
 
