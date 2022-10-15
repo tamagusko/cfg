@@ -6,7 +6,6 @@
 3. Update docs
 4. Fix cedilla (implement bash)
 5. Install zsh, configure zsh, oh-my-zsh, and powerlevel10k (implement bash)
-6. Configure neovim and install copilot (implement bash)
     
 ## Arch Xfce4:
 1. Create a new file /docs/Arch-xfce4.md
@@ -22,4 +21,3 @@
 1. Create a new file /docs/Debian-i3wm.md
 2. Update docs
 3. Write script to automatic instalation
-

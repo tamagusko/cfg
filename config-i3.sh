@@ -2,6 +2,8 @@
 
 # WARNING: For personal use only, use at your own risk.
 
+# This is not a minimal install. This is my customized installation.
+
 VERSION="0.1.0"
 DATE="2022-10-15"
 AUTHOR="Tiago Tamagusko"
@@ -10,9 +12,7 @@ CONTACT="tamagusko@gmail.com"
 # TODO:
 
 # 1. Fix cedilla (implement bash)
-# 2. Install zsh, configure zsh, oh-my-zsh, and powerlevel10k
-# 3. Configure neovim and install copilot
-# 4. Install latex
+# 2. Install zsh, configure zsh, oh-my-zsh, and powerlevel10k (implement)
 
 echo "---------------------------------------------------------"
 echo "Arch Linux i3 customization v$VERSION ($DATE)"
@@ -39,7 +39,7 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
 cd .. 
-rm -rf "/opt/paru"
+rm -rf /opt/paru
 
 # install dependencies
 echo
@@ -50,17 +50,19 @@ PKGS=(
     maim # screenshot tool
     kitty # terminal
     ranger # terminal based file manager
-    zsh 
-    vim 
-    neovim
+    zsh # shell
+    vim # terminal based ide (default editor)
+    neovim # terminal based ide
+    hunspell # spell checker
+    hunspell-en_us # en us dictionary
     python-neovim
     python-setuptools
-    code
+    code # ide
     cronie # cron implementation on archlinux
-    python-pip
-    papirus-icon-theme
+    python-pip # python installation method
+    papirus-icon-theme # icons 
     ufw # firewall 
-    fzf
+    fzf # command line fuzzy finder
     zathura # pdf viewer
     btop # system info (htop alternative)
     # acpi_call only on thinkpad
@@ -133,7 +135,7 @@ mkdir ~/repos
 cd ~/repos
 git clone https://github.com/tamagusko/linux-cfg.git
 cd linux-cfg
-cp -r "~/repos/linux-cfg/dotfiles/" "~/.config/"
+cp -r ~/repos/linux-cfg/dotfiles/* ~/.config/
 
 clear
 
@@ -148,7 +150,7 @@ STEPS=(
     "STEP 4) Configure zsh"
     "STEP 5) Configure neovim"
     "STEP 6) Latex installation (scripts/latex_install.sh)"
-    "See docs/ARCH.md for details"
+    "See docs/ARCH-i3wm.md for details"
 )
 
 for STEP in "${STEPS[@]}"; do

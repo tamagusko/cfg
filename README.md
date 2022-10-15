@@ -12,7 +12,7 @@ Simple is better than complex.
 
     * i3wm:
 
-          bash <(curl -s https://raw.githubusercontent.com/tamagusko/linux-cfg/main/config-i3.sh)
+          sh <(curl -s https://raw.githubusercontent.com/tamagusko/linux-cfg/main/config-i3.sh)
 
 ## Extra steps on docs.
 
