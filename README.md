@@ -4,9 +4,9 @@ Simple is better than complex.
 
 *WARNING: For personal use only, use at your own risk.*
 
-## Post-installation EndeavorOs (Arch based):
+## Post-installation EndeavorOs i3wm edition (Arch based):
 
-1. Install [EndeavourOS][https://endeavouros.com/], and choose your edition (i3wm or Xfce4).
+1. Install [EndeavourOS][https://endeavouros.com/], and choose i3wm edition.
 
 2. Run the script for automatic configuration.
 
@@ -14,39 +14,15 @@ Simple is better than complex.
 
           bash <(curl -s https://raw.githubusercontent.com/tamagusko/linux-cfg/main/config-i3.sh)
 
-    * Xfce4 (not implement):
-
-          bash <(curl -s https://raw.githubusercontent.com/tamagusko/linux-cfg/main/config-xfce4.sh)
-
 ## Extra steps on docs.
 
-- [Arch](docs/ARCH.md)
-- [Ubuntu](docs/UBUNTU.md)
+- [Arch i3wm](docs/Arch-i3wm.md)
 
-## Todo:
+## For others distros look:
 
-- Arch i3wm:
-    - Actualize dotfiles  
-    - Create a new file /docs/Arch-i3wm.md
-    - Update docs
-    - Fix cedilla (implement bash)
-    - Install zsh, configure zsh, oh-my-zsh, and powerlevel10k (implement bash)
-    - Configure neovim and install copilot (implement bash)
-    - Install latex (implement bash)
-    
-- Arch Xfce4:
-    - Create a new file /docs/Arch-xfce4.md
-    - Update docs
-    - write script to automatic instalation
-- Ubuntu: 
-    - Create a new file /docs/Ubuntu-xfce4.md
-    - Update docs
-    - write script to automatic instalation
-- Debian: 
-    - Create a new file /docs/Ubuntu-i3wm.md
-    - Update docs
-    - write script to automatic instalation
----
+- [Arch Xfce4](docs/Arch-xfce4.md)
+- [Mint Xfce4](docs/Mint-xfce4.md)
+- [Debian i3wm](docs/Debian-i3wm.md)
 
 To contact me directly, send email to [tamagusko@gmail.com](mailto:tamagusko@gmail.com).
 

@@ -6,7 +6,6 @@ VERSION="0.1.0"
 DATE="2022-10-15"
 AUTHOR="Tiago Tamagusko"
 CONTACT="tamagusko@gmail.com"
-FOLDER=$(pwd)
 
 # TODO:
 
@@ -128,8 +127,11 @@ echo
 echo "LOADING CONFIGURATION"
 echo
 
-cp -r "$FOLDER/.config/" "~/.config/"
-rm -rf "$FOLDER/.config/"
+cd "/opt"
+git clone https://github.com/tamagusko/linux-cfg.git
+cd "linux-cfg"
+cp -r "/dotfiles/" "~/.config/"
+rm -rf "/opt/linux-cfg"
 
 clear
 
