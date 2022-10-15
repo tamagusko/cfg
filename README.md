@@ -6,7 +6,7 @@ Simple is better than complex.
 
 ## Post-installation EndeavorOs i3wm edition (Arch based):
 
-1. Install [EndeavourOS][https://endeavouros.com/], and choose i3wm edition.
+1. Install [EndeavourOS](https://endeavouros.com/), and choose i3wm edition.
 
 2. Run the script for automatic configuration.
 
@@ -23,6 +23,8 @@ Simple is better than complex.
 - [Arch Xfce4](docs/Arch-xfce4.md)
 - [Mint Xfce4](docs/Mint-xfce4.md)
 - [Debian i3wm](docs/Debian-i3wm.md)
+
+---
 
 To contact me directly, send email to [tamagusko@gmail.com](mailto:tamagusko@gmail.com).
 
