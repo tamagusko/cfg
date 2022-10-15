@@ -54,6 +54,7 @@ PKGS=(
     vim 
     neovim
     python-neovim
+    python-setuptools
     code
     cronie # cron implementation on archlinux
     python-pip
