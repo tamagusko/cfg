@@ -1,4 +1,4 @@
-# Configuration files for fresh Linux installations
+# Script to install i3wm on top of EndeavorOS
 
 Simple is better than complex.
 
@@ -13,12 +13,6 @@ Simple is better than complex.
     * i3wm:
 
           sh <(curl -s https://raw.githubusercontent.com/tamagusko/linux-cfg/main/config-i3.sh)
-
-## For others distros look:
-
-- [Arch Xfce4](docs/Arch-xfce4.md)
-- [Mint Xfce4](docs/Mint-xfce4.md)
-- [Debian i3wm](docs/Debian-i3wm.md)
 
 ---
 
