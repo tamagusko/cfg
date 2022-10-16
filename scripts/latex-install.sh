@@ -1,7 +1,5 @@
 #!/bin/sh
 
-#!/bin/bash
-
 # WARNING: For personal use only, use at your own risk.
 
 VERSION="0.1.0"
