@@ -80,9 +80,7 @@ echo
 
 PKGS_AUR=(
     zathura-djvu
-    zathura-cb
     zathura-pdf-mupdf
-    zathura-ps
     zoom
     teams
     slack-desktop
