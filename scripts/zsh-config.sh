@@ -30,7 +30,7 @@ echo
 
 echo "alias cd..='cd ..'" >>~/.zshrc
 echo "alias h=history" >>~/.zshrc
-echo "alias lvim=/home/t1/.local/bin/lvim" >>~/.zshrc
+echo "alias vi=nvim" >>~/.zshrc
 echo "alias svi='sudo vim'" >>~/.zshrc
 echo "alias srun='python3 -m uvicorn --port 5000 --host 127.0.0.1 main:app --reload'" >>~/.zshrc
 echo "alias gitignorebig='find . -size +100M | cat >> .gitignore'" >>~/.zshrc
