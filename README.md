@@ -14,10 +14,6 @@ Simple is better than complex.
 
           sh <(curl -s https://raw.githubusercontent.com/tamagusko/linux-cfg/main/config-i3.sh)
 
-## Extra steps on docs.
-
-- [Arch i3wm](docs/Arch-i3wm.md)
-
 ## For others distros look:
 
 - [Arch Xfce4](docs/Arch-xfce4.md)
