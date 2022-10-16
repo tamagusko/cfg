@@ -1,7 +1,5 @@
 # Script to install i3wm on top of EndeavorOS
 
-Simple is better than complex.
-
 *WARNING: For personal use only, use at your own risk.*
 
 ## Steps:
@@ -10,9 +8,7 @@ Simple is better than complex.
 
 2. Run the script for automatic configuration.
 
-    * i3wm:
-
-          sh <(curl -s https://raw.githubusercontent.com/tamagusko/linux-cfg/main/config-i3.sh)
+       sh <(curl -s https://raw.githubusercontent.com/tamagusko/linux-cfg/main/config-i3.sh)
 
 ---
 
