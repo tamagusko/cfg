@@ -1,5 +1,22 @@
 # Todo:
 
+1. Modularize.
+2. Add menu.
+3. refactor.
+
+Example of menu:
+
+while true; do
+    read -p "Do you wish to install this program? " yn
+    case $yn in
+        [Yy]* ) make install; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+source: https://stackoverflow.com/questions/226703/how-do-i-prompt-for-yes-no-cancel-input-in-a-linux-shell-script
+
 ## Arch i3wm:
 1. Actualize dotfiles  
 2. Create a new file /docs/Arch-i3wm.md
