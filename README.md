@@ -4,7 +4,7 @@ Simple is better than complex.
 
 *WARNING: For personal use only, use at your own risk.*
 
-## Post-installation EndeavorOs i3wm edition (Arch based):
+## Steps:
 
 1. Install [EndeavourOS](https://endeavouros.com/), and choose i3wm edition.
 
