@@ -40,8 +40,9 @@ for PKG in "${PKGS_AUR[@]}"; do
     paru -S --noconfirm "$PKG"
 done
 
+clear
 echo
+echo "--------------------------"
 echo "LATEX INSTALLED! HAVE FUN!"
-echo
-
+echo "--------------------------"
 

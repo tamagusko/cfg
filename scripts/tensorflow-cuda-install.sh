@@ -29,4 +29,8 @@ echo
 
 sudo paru -S --noconfirm python-tensorflow-cuda
 
-
+clear
+echo
+echo "--------------------------------------------------"
+echo "NVIDIA, CUDA, AND TENSORFLOW INSTALLED! HAVE FUN!"
+echo "--------------------------------------------------"
