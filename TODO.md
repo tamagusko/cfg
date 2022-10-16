@@ -4,8 +4,6 @@
 1. Actualize dotfiles  
 2. Create a new file /docs/Arch-i3wm.md
 3. Update docs
-4. Fix cedilla (implement bash)
-5. Install zsh, configure zsh, oh-my-zsh, and powerlevel10k (implement bash)
     
 ## Arch Xfce4:
 1. Create a new file /docs/Arch-xfce4.md
