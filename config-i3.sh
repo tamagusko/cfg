@@ -149,7 +149,7 @@ STEPS=(
     "STEP 3) Install zsh, oh-my-zsh, and powerlevel10k"
     "STEP 4) Configure zsh"
     "STEP 5) Configure neovim"
-    "STEP 6) Latex installation (scripts/latex_install.sh)"
+    "STEP 6) Latex installation (scripts/latex-install.sh)"
     "See docs/ARCH-i3wm.md for details"
 )
 
