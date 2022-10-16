@@ -9,6 +9,9 @@ DATE="2022-10-15"
 AUTHOR="Tiago Tamagusko"
 CONTACT="tamagusko@gmail.com"
 
+# Run all extra scripts in the scripts folder? This can take quite a while.
+RUNALL="true"
+
 # TODO:
 
 # 1. Fix cedilla (implement bash)
@@ -137,23 +140,37 @@ cp -r ~/repos/linux-cfg/dotfiles/* ~/.config/
 
 clear
 
-echo
-echo "NEXT STEPS TO FINISH THE CONFIGURATION"
-echo
+# FINAL STEPS TO FINISH THE INSTALATION
 
-STEPS=(
+# See RUNALL in line 13.
+if $RUNALL
+then
+  echo
+  echo "INSTALLING EXTRA SCRIPTS"
+  echo
+  
+  sh latex-install.sh
+  sh neovim-config.sh
+  sh tensorflow-cuda-install.sh
+  sh zsh-config.sh
+  sh fix-cedilla.sh
+else
+  echo
+  echo "NEXT STEPS TO FINISH THE CONFIGURATION"
+  echo
+
+  STEPS=(
     "STEP 1) Login Google and Firefox"
-    "STEP 2) Fix cedilla"
-    "STEP 3) Install zsh, oh-my-zsh, and powerlevel10k"
-    "STEP 4) Configure zsh"
-    "STEP 5) Configure neovim"
-    "STEP 6) Latex installation (scripts/latex-install.sh)"
+    "STEP 2) Fix cedilla (scripts/fix-cedilla.sh)"
+    "STEP 3) Install zsh, oh-my-zsh, and powerlevel10k (scripts/zsh-config.sh)"
+    "STEP 4) Configure neovim (scripts/neovim-config.sh)"
+    "STEP 5) Latex installation (scripts/latex-install.sh)"
     "See docs/ARCH-i3wm.md for details"
-)
-
-for STEP in "${STEPS[@]}"; do
+  )
+  for STEP in "${STEPS[@]}"; do
     echo ${STEP}
-done
+  done
+fi
 
 echo
 echo "INSTALATION PROCESS DONE! HAVE FUN!"
