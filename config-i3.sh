@@ -66,6 +66,7 @@ PKGS=(
     papirus-icon-theme # icons 
     ufw # firewall 
     fzf # command line fuzzy finder
+    fail2ban
     zathura # pdf viewer
     btop # system info (htop alternative)
     # acpi_call only on thinkpad
@@ -112,7 +113,11 @@ ufw enable
 systemctl enable ufw
 systemctl start ufw
 
-# --- Harden /etc/sysctl.conf
+# enable fail2ban
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
+
+# harden /etc/sysctl.conf
 sysctl kernel.modules_disabled=1
 sysctl -a
 sysctl -A
