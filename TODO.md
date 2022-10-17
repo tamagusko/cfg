@@ -7,14 +7,14 @@
 
 Example of menu:
 
-while true; do
-    read -p "Do you wish to install this program? " yn
-    case $yn in
-        [Yy]* ) make install; break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+while true; do  
+    read -p "Do you wish to install this program? " yn  
+    case $yn in  
+        [Yy]* ) make install; break;;  
+        [Nn]* ) exit;;  
+        * ) echo "Please answer yes or no.";;  
+    esac  
+done  
 
 source: https://stackoverflow.com/questions/226703/how-do-i-prompt-for-yes-no-cancel-input-in-a-linux-shell-script
 
