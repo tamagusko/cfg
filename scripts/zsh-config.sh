@@ -16,7 +16,7 @@ echo
 echo "INSTALL ZSH"
 echo
 
-sudo pacman zsh fzf --noconfirm
+sudo pacman -S --needed zsh fzf --noconfirm
 
 echo
 echo "INSTALL OH-MY-ZSH"
@@ -24,10 +24,7 @@ echo
 
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
-echo
-echo "ADD ALIASES"
-echo
-
+# add aliases to zsh
 echo "alias cd..='cd ..'" >>~/.zshrc
 echo "alias h=history" >>~/.zshrc
 echo "alias vi=nvim" >>~/.zshrc
@@ -38,12 +35,10 @@ echo "alias vac='source venv/bin/activate'" >>~/.zshrc
 echo "alias vmk='python3 -m virtualenv .venv'" >>~/.zshrc
 echo "alias python=python3" >>~/.zshrc
 
-echo
-echo "ADD PLUGINS"
-echo
-
+# add plugins to zsh
 sudo sed -i 's/plugins=(git)/plugins=(git sudo vscode gitfast command-not-found gitignore heroku taskwarrior fzf zsh-syntax-highlighting zsh-autosuggestions colored-man-pages virtualenv)/' ~/.zshrc
 
+# clone missed plugins
 cd ~/.oh-my-zsh/plugins/
 git clone https://github.com/zsh-users/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions

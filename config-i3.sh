@@ -11,6 +11,7 @@ CONTACT="tamagusko@gmail.com"
 
 # Run all extra scripts in the scripts folder? This can take quite a while.
 RUNALL="true"
+FOLDER=$(pwd)
 
 echo "---------------------------------------------------------"
 echo "Arch Linux i3 customization v$VERSION ($DATE)"
@@ -23,18 +24,18 @@ echo
 echo "UPDATING PACKAGES"
 echo
 
-sudo pacman -S archlinux-keyring && sudo pacman -Syu
+sudo pacman -S --needed archlinux-keyring && sudo pacman -Syu --noconfirm
 
 echo
 echo "INSTALLING PARU"
 echo
 
 sudo pacman -S --needed git base-devel --noconfirm
-cd /opt
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
-rm -rf /opt/paru
+cd ..
+sudo rm -rf $FOLDER/paru
 
 echo
 echo "CLONE CONFIGURATION REPOSITORY"
@@ -49,7 +50,7 @@ echo
 echo "INSTALLING EXTRA (PACMAN) PACKAGES"
 echo
 
-xargs sudo pacman -S < packages.txt --noconfirm --needed
+xargs sudo pacman -S --needed < packages.txt --noconfirm 
 
 echo
 echo "INSTALLING AUR PACKAGES"
@@ -68,16 +69,16 @@ ufw default deny incoming
 ufw default allow outgoing
 ufw enable
 
-systemctl enable ufw
-systemctl start ufw
+sudo systemctl enable ufw
+sudo systemctl start ufw
 
 # --- Harden /etc/sysctl.conf
 sysctl kernel.modules_disabled=1
 sysctl -a
 sysctl -A
 sysctl mib
-sysctl net.ipv4.conf.all.rp_filter
-sysctl -a --pattern 'net.ipv4.conf.(eth|wlan)0.arp'
+sudo sysctl net.ipv4.conf.all.rp_filter
+sudo sysctl -a --pattern 'net.ipv4.conf.(eth|wlan)0.arp'
 
 ## nvidia drivers
 #echo
@@ -92,8 +93,6 @@ echo
 
 cp -r ~/repos/linux-cfg/dotfiles/* ~/.config/
 
-clear
-
 # See RUNALL in line 13.
 if $RUNALL
 then
@@ -101,8 +100,8 @@ then
   echo "INSTALLING EXTRA SCRIPTS"
   echo
   
-  for f in ~/repos/scripts/*.sh; do  # execute all scripts
-    bash "$f" || break  # execute successfully or break
+  for f in ~/repos/linux-cfg/scripts/*.sh; do  # execute all scripts
+    bash "$f"
   done
 
 else

@@ -17,7 +17,7 @@ echo
 echo "NVIDIA DRIVER INSTALATION"
 echo
 
-sudo paru -S --noconfirm nvidia-inst 
+sudo paru -S --noconfirm --needed nvidia-inst 
 sudo nvidia-inst
 
 # Install cuda
@@ -25,7 +25,7 @@ echo
 echo "TENSORFLOW/CUDA INSTALATION"
 echo
 
-sudo paru -S --noconfirm python-tensorflow-cuda
+sudo paru -S --noconfirm --needed python-tensorflow-cuda
 
 clear
 echo

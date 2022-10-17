@@ -31,7 +31,7 @@ pip install vim-vint
 pip install 'python-lsp-server[all]' pylsp-mypy pyls-isort
 paru -S --noconfirm nodejs-lts-gallium
 paru -S --noconfirm nodejs-lts-gallium ripgrep
-sudo pacman -S npm ctags --noconfirm
+sudo pacman -S --needed npm ctags --noconfirm
 sudo npm install -g vim-language-server
 
 echo

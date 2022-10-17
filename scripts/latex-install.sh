@@ -17,8 +17,8 @@ echo
 echo "LATEX INSTALATION"
 echo
 
-sudo pacman -Syy
-sudo pacman -S texlive-most --noconfirm
+sudo pacman -Syy --noconfirm
+sudo pacman -S --needed texlive-most --noconfirm
 
 # install aur packages
 echo
@@ -35,7 +35,7 @@ PKGS_AUR=(
 
 for PKG in "${PKGS_AUR[@]}"; do
     echo "INSTALLING: ${PKG}"
-    paru -S --noconfirm "$PKG"
+    paru -S --noconfirm --needed "$PKG"
 done
 
 clear

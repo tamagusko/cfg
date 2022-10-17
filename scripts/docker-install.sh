@@ -16,9 +16,9 @@ echo
 echo "DOCKER INSTALATION"
 echo
 
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 sudo paru -S --noconfirm docker 
-sudo docker version
+sudo docker version 
 
 echo
 echo "ENABLE DOCKER"
