@@ -16,6 +16,7 @@ echo
 echo "INSTALL ZSH"
 echo
 
+sudo pacman -Syu --noconfirm
 sudo pacman -S --needed zsh fzf --noconfirm
 
 echo

@@ -12,23 +12,26 @@ echo "Tensorflow Cuda Instalation on Arch Linux v$VERSION ($DATE)"
 echo "by $AUTHOR <$CONTACT>"
 echo "------------------------------------------------------------"
 
-# Install nvidia driver
 echo
-echo "NVIDIA DRIVER INSTALATION"
-echo
-
-paru -S --noconfirm --needed nvidia-inst 
-sudo nvidia-inst
-
-# Install cuda
-echo
-echo "TENSORFLOW/CUDA INSTALATION"
+echo "PIP INSTALATION"
 echo
 
-sudo paru -S --noconfirm --needed python-tensorflow-cuda
+sudo pacman -S --needed python-pip --noconfirm
+
+echo
+echo "PYTORCH INSTALATION"
+echo
+
+## uncomment to install in a virtualenv
+#pip install virtualenv
+#python3 -m venv ~/venv/pytorch
+#source ~/venv/pytorch/bin/activate
+pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
+pip install tqdm
 
 clear
 echo
 echo "--------------------------------------------------"
-echo "NVIDIA, CUDA, AND TENSORFLOW INSTALLED! HAVE FUN!"
+echo "PYTORCH INSTALLED! HAVE FUN!"
 echo "--------------------------------------------------"
+
