@@ -9,16 +9,54 @@ DATE="2022-10-15"
 AUTHOR="Tiago Tamagusko"
 CONTACT="tamagusko@gmail.com"
 
-# Run all extra scripts in the scripts folder? This can take quite a while.
-RUNALL="true"
 FOLDER=$(pwd)
+LATEX="false"
+DOCKER="false"
+PYTORCH="false"
+TENSORFLOW="false"
 
 echo "---------------------------------------------------------"
-echo "Arch Linux i3 customization v$VERSION ($DATE)"
+echo "ARCH Linux i3 customization v$VERSION ($DATE)"
 echo "by $AUTHOR <$CONTACT>"
 echo 
 echo "NOTE: install EndeavorOs i3 before running this script "
 echo "---------------------------------------------------------"
+
+while true; do  
+    read -p "Install and configure Latex (y or n)? " yn  
+    case $yn in  
+        [Yy]* ) LATEX="true";;  
+        [Nn]* ) LATEX="false";;  
+        * ) echo "Please answer yes(y) or no(n).";;  
+    esac  
+done  
+
+while true; do  
+    read -p "Install and configure Docker (y or n)? " yn  
+    case $yn in  
+        [Yy]* ) DOCKER="true";;  
+        [Nn]* ) DOCKER="false";;  
+        * ) echo "Please answer yes(y) or no(n).";;  
+    esac  
+done  
+
+while true; do  
+    read -p "Install and configure Tensorflow (y or n)? " yn  
+    case $yn in  
+        [Yy]* ) TENSORFLOW="true";;  
+        [Nn]* ) TENSORFLOW="false";;  
+        * ) echo "Please answer yes(y) or no(n).";;  
+    esac  
+done  
+
+while true; do  
+    read -p "Install and configure Pytorch (y or n)? " yn  
+    case $yn in  
+        [Yy]* ) PYTORCH="true";;  
+        [Nn]* ) PYTORCH="false";;  
+        * ) echo "Please answer yes(y) or no(n).";;  
+    esac  
+done  
 
 echo
 echo "UPDATING PACKAGES"
@@ -93,33 +131,32 @@ echo
 
 cp -r ~/repos/linux-cfg/dotfiles/* ~/.config/
 
-# See RUNALL in line 13.
-if $RUNALL
+echo
+echo "INSTALLING EXTRA SCRIPTS"
+echo
+
+sh ~/repos/linux-cfg/scripts/fix-cedilla.sh
+sh zsh-config.sh
+sh neovim-config.sh
+
+if LATEX
 then
-  echo
-  echo "INSTALLING EXTRA SCRIPTS"
-  echo
+  sh ~/repos/linux-cfg/scripts/latex-install.sh
+fi
   
-  for f in ~/repos/linux-cfg/scripts/*.sh; do  # execute all scripts
-    bash "$f"
-  done
+if DOCKER
+then
+  sh ~/repos/linux-cfg/scripts/docker-install.sh
+fi
 
-else
-  echo
-  echo "NEXT STEPS TO FINISH THE CONFIGURATION"
-  echo
+if TENSORFLOW
+then
+  sh ~/repos/linux-cfg/scripts/tensorflow-cuda-install.sh
+fi
 
-  STEPS=(
-    "STEP 1) Login Google and Firefox"
-    "STEP 2) Fix cedilla (scripts/fix-cedilla.sh)"
-    "STEP 3) Install zsh, oh-my-zsh, and powerlevel10k (scripts/zsh-config.sh)"
-    "STEP 4) Configure neovim (scripts/neovim-config.sh)"
-    "STEP 5) Latex installation (scripts/latex-install.sh)"
-    "See docs/ARCH-i3wm.md for details"
-  )
-  for STEP in "${STEPS[@]}"; do
-    echo ${STEP}
-  done
+if PYTORCH
+then
+  sh ~/repos/linux-cfg/scripts/pytorch-install.sh
 fi
 
 echo
