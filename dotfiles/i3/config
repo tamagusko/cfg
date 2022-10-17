@@ -235,8 +235,8 @@ bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 set $ws1 "1:"  
 set $ws2 "2:"  
 set $ws3 "3:"  
-set $ws4 "4:"  
-set $ws5 "5:"  
+set $ws4 "4:"  
+set $ws5 "5:"  
 set $ws6 "6:"     
 set $ws7 "7:"     
 set $ws8 "8:"     
@@ -255,9 +255,9 @@ set $ws8 "8:"
 assign [class=Xfce4-terminal] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [class=code] $ws3
-assign [class=TeXstudio|ghostwriter] $ws4
-assign [title="LibreOffice*"] $ws4
-assign [class=Thunar] $ws5
+assign [class=Thunar] $ws4
+assign [class=TeXstudio|ghostwriter] $ws5
+assign [title="LibreOffice*"] $ws5
 assign [class=Slack|Teams] $ws6
 assign [class=zoom] $ws7
 assign [class=btop|htop] $ws8
