@@ -8,7 +8,7 @@
 
 2. Run the script for automatic configuration.
 
-       sh <(curl -s https://raw.githubusercontent.com/tamagusko/linux-cfg/main/config-i3.sh)
+       sh <(curl -s https://raw.githubusercontent.com/tamagusko/linux-cfg/main/config.sh)
 
 ---
 
