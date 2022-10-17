@@ -12,11 +12,6 @@ CONTACT="tamagusko@gmail.com"
 # Run all extra scripts in the scripts folder? This can take quite a while.
 RUNALL="true"
 
-# TODO:
-
-# 1. Fix cedilla (implement bash)
-# 2. Install zsh, configure zsh, oh-my-zsh, and powerlevel10k (implement)
-
 echo "---------------------------------------------------------"
 echo "Arch Linux i3 customization v$VERSION ($DATE)"
 echo "by $AUTHOR <$CONTACT>"
@@ -24,14 +19,12 @@ echo
 echo "NOTE: install EndeavorOs i3 before running this script "
 echo "---------------------------------------------------------"
 
-# update packages
 echo
 echo "UPDATING PACKAGES"
 echo
 
 sudo pacman -S archlinux-keyring && sudo pacman -Syu
 
-# paru installation
 echo
 echo "INSTALLING PARU"
 echo
@@ -41,24 +34,29 @@ cd /opt
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
-cd .. 
 rm -rf /opt/paru
 
-# install dependencies
+echo
+echo "CLONE CONFIGURATION REPOSITORY"
+echo
+
+mkdir ~/repos
+cd ~/repos
+git clone https://github.com/tamagusko/linux-cfg.git
+cd linux-cfg
+
 echo
 echo "INSTALLING EXTRA (PACMAN) PACKAGES"
 echo
 
 xargs sudo pacman -S < packages.txt --noconfirm --needed
 
-# install aur packages
 echo
 echo "INSTALLING AUR PACKAGES"
 echo
 
 xargs paru -S --noconfirm --needed < packages-AUR.txt 
 
-# secure issues
 echo "-------------------------------------------------"
 echo "Secure Linux                                     "
 echo "-------------------------------------------------"
@@ -82,26 +80,19 @@ sysctl net.ipv4.conf.all.rp_filter
 sysctl -a --pattern 'net.ipv4.conf.(eth|wlan)0.arp'
 
 ## nvidia drivers
-echo
-echo "INSTALL NVIDIA DRIVERS"
-echo
+#echo
+#echo "INSTALL NVIDIA DRIVERS"
+#echo
 
-sudo pacman -S nvidia nvidia-dkms nvidia-utils nvidia-settings
+#sudo pacman -S nvidia nvidia-dkms nvidia-utils nvidia-settings
 
-# copy and load scripts
 echo
 echo "LOADING CONFIGURATION"
 echo
 
-mkdir ~/repos
-cd ~/repos
-git clone https://github.com/tamagusko/linux-cfg.git
-cd linux-cfg
 cp -r ~/repos/linux-cfg/dotfiles/* ~/.config/
 
 clear
-
-# FINAL STEPS TO FINISH THE INSTALATION
 
 # See RUNALL in line 13.
 if $RUNALL
@@ -133,5 +124,6 @@ else
 fi
 
 echo
+echo "BACKUP OF INSTALLED FILES ON ~/repos/linux-cfg"
 echo "INSTALATION PROCESS DONE! HAVE FUN!"
 echo
