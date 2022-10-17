@@ -1,8 +1,9 @@
 # Todo:
 
-1. Modularize.
-2. Add menu.
+1. modularize.
+2. add menu.
 3. refactor.
+4. install without endeavourOS layer.
 
 Example of menu:
 

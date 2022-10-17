@@ -1,0 +1,9 @@
+ghostwriter
+skypeforlinux-stable-bin
+slack-desktop
+teams
+texstudio
+zathura-djvu
+zathura-pdf-mupdf
+zoom
+
