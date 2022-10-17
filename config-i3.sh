@@ -49,54 +49,14 @@ echo
 echo "INSTALLING EXTRA (PACMAN) PACKAGES"
 echo
 
-PKGS=(
-    maim # screenshot tool
-    kitty # terminal
-    ranger # terminal based file manager
-    zsh # shell
-    vim # terminal based ide (default editor)
-    neovim # terminal based ide
-    hunspell # spell checker
-    hunspell-en_us # en us dictionary
-    python-neovim
-    python-setuptools
-    code # ide
-    cronie # cron implementation on archlinux
-    python-pip # python installation method
-    papirus-icon-theme # icons 
-    ufw # firewall 
-    fzf # command line fuzzy finder
-    fail2ban
-    zathura # pdf viewer
-    btop # system info (htop alternative)
-    # acpi_call only on thinkpad
-)
-
-for PKG in "${PKGS[@]}"; do
-    echo "INSTALLING: ${PKG}"
-    sudo pacman -S "$PKG" --noconfirm --needed
-done
+xargs sudo pacman -S < packages.txt --noconfirm --needed
 
 # install aur packages
 echo
 echo "INSTALLING AUR PACKAGES"
 echo
 
-PKGS_AUR=(
-    zathura-djvu
-    zathura-pdf-mupdf
-    zoom
-    teams
-    slack-desktop
-    skypeforlinux-stable-bin
-    texstudio
-    ghostwriter
-)
-
-for PKG in "${PKGS_AUR[@]}"; do
-    echo "INSTALLING: ${PKG}"
-    paru -S --noconfirm "$PKG"
-done
+xargs paru -S --noconfirm --needed < packages-AUR.txt 
 
 # secure issues
 echo "-------------------------------------------------"
@@ -113,11 +73,7 @@ ufw enable
 systemctl enable ufw
 systemctl start ufw
 
-# enable fail2ban
-sudo systemctl enable fail2ban
-sudo systemctl start fail2ban
-
-# harden /etc/sysctl.conf
+# --- Harden /etc/sysctl.conf
 sysctl kernel.modules_disabled=1
 sysctl -a
 sysctl -A
@@ -154,11 +110,10 @@ then
   echo "INSTALLING EXTRA SCRIPTS"
   echo
   
-  sh latex-install.sh
-  sh neovim-config.sh
-  sh tensorflow-cuda-install.sh
-  sh zsh-config.sh
-  sh fix-cedilla.sh
+  for f in ~/repos/scripts/*.sh; do  # execute all scripts
+    bash "$f" || break  # execute successfully or break
+  done
+
 else
   echo
   echo "NEXT STEPS TO FINISH THE CONFIGURATION"
