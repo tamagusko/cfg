@@ -48,7 +48,6 @@ echo
 git clone https://github.com/github/copilot.vim.git \
   ~/.config/nvim/pack/github/start/copilot.vim
 
-clear
 echo
 echo "CONFIGURATION COMPLETE! HAVE FUN!"
 echo "-----------------------------------------------------------------"

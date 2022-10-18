@@ -9,7 +9,6 @@ DATE="2022-10-15"
 AUTHOR="Tiago Tamagusko"
 CONTACT="tamagusko@gmail.com"
 
-FOLDER=$(pwd)
 I3WM="false"
 LATEX="false"
 DOCKER="false"
@@ -47,20 +46,20 @@ yes_or_no_question "Docker" && DOCKER="true"
 yes_or_no_question "Pytorch" && PYTORCH="true"
 yes_or_no_question "Tensorflow" && TENSORFLOW="true"
 
-
-
 echo_message "UPDATING PACMAN PACKAGES"
 
 sudo pacman -S --needed archlinux-keyring && sudo pacman -Syu --noconfirm
 
-echo_message "INSTALLING PARU"
-
-sudo pacman -S --needed git base-devel --noconfirm
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si --noconfirm
-cd ..
-sudo rm -rf $FOLDER/paru
+if ! paru --version ; then
+    echo_message "INSTALLING PARU"
+    FOLDER=$(pwd)
+    sudo pacman -S --needed git base-devel --noconfirm
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si --noconfirm
+    cd ..
+    sudo rm -rf $FOLDER/paru
+fi
 
 echo_message "CLONE CONFIGURATION REPOSITORY"
 
@@ -70,7 +69,6 @@ git clone https://github.com/tamagusko/linux-cfg.git
 cd linux-cfg
 
 echo_message "INSTALLING PACMAN PACKAGES"
-
 
 xargs sudo pacman -S --needed < packages.txt --noconfirm 
 
@@ -114,22 +112,22 @@ fi
 echo_message "INSTALLING EXTRA SCRIPTS"
 
 sh ~/repos/linux-cfg/scripts/fix-cedilla.sh
-sh ~/repos/linux-cfg/scripts/zsh-config.sh
-sh ~/repos/linux-cfg/scripts/neovim-config.sh
+sh ~/repos/linux-cfg/scripts/zsh.sh
+sh ~/repos/linux-cfg/scripts/neovim.sh
 
-if LATEX; then
+if $LATEX; then
   sh ~/repos/linux-cfg/scripts/latex.sh
 fi
   
-if DOCKER; then
+if $DOCKER; then
   sh ~/repos/linux-cfg/scripts/docker.sh
 fi
 
-if TENSORFLOW; then
+if $TENSORFLOW; then
   sh ~/repos/linux-cfg/scripts/tensorflow-cuda.sh
 fi
 
-if PYTORCH; then
+if $PYTORCH; then
   sh ~/repos/linux-cfg/scripts/pytorch.sh
 fi
 
