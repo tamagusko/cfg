@@ -114,6 +114,7 @@ echo_message "INSTALLING EXTRA SCRIPTS"
 sh ~/repos/linux-cfg/scripts/fix-cedilla.sh
 sh ~/repos/linux-cfg/scripts/zsh.sh
 sh ~/repos/linux-cfg/scripts/neovim.sh
+sh ~/repos/linux-cfg/scripts/ghostwriter.sh
 
 if $LATEX; then
   sh ~/repos/linux-cfg/scripts/latex.sh

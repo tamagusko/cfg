@@ -1,8 +1,10 @@
 ghostwriter
+nerd-fonts-hack
 skypeforlinux-stable-bin
 slack-desktop
 teams
 texstudio
+timeshift-bin
 visual-studio-code-bin
 zathura-pdf-mupdf
 zoom
