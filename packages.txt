@@ -4,6 +4,8 @@ docker
 fzf
 hunspell
 hunspell-en_us
+jupyterlab
+jupyter-notebook
 kitty
 maim
 neovim

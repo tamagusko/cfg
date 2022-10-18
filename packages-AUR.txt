@@ -1,10 +1,8 @@
 ghostwriter
 skypeforlinux-stable-bin
 slack-desktop
-visual-studio-code-bin
 teams
 texstudio
+visual-studio-code-bin
 zathura-pdf-mupdf
 zoom
-
-
