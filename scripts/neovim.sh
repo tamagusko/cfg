@@ -29,9 +29,7 @@ pip install pylint
 pip install flake8
 pip install vim-vint
 pip install 'python-lsp-server[all]' pylsp-mypy pyls-isort
-paru -S --noconfirm nodejs-lts-gallium
-paru -S --noconfirm nodejs-lts-gallium ripgrep
-sudo pacman -S --needed npm ctags --noconfirm
+paru -S --noconfirm --needed npm ctags nerd-fonts-fira-code nodejs-lts-gallium ripgrep
 sudo npm install -g vim-language-server
 
 echo
