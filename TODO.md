@@ -5,9 +5,8 @@
 3. install without endeavourOS layer.
 
 ## Arch i3wm:
-1. Actualize dotfiles  
-2. Create a new file /docs/Arch-i3wm.md
-3. Update docs
+1. Create a new file /docs/Arch-i3wm.md
+2. Update docs
     
 ## Arch Xfce4:
 1. Create a new file /docs/Arch-xfce4.md
