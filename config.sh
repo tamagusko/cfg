@@ -15,8 +15,7 @@ DOCKER="false"
 PYTORCH="false"
 TENSORFLOW="false"
 
-
-# configuring installation options (extra packages)
+# functions
 function yes_or_no_question {
     while true; do
         read -p "Install and configure $*? [y/n]: " yn
@@ -33,6 +32,7 @@ function echo_message {
     echo "---------------------------------------------------------"
 }
 
+# init of script
 echo "---------------------------------------------------------"
 echo "ARCH Linux i3 customization v$VERSION ($DATE)"
 echo "by $AUTHOR <$CONTACT>"
@@ -40,6 +40,7 @@ echo
 echo "NOTE: install EndeavorOs i3 before running this script "
 echo "---------------------------------------------------------"
 
+# ask for extra packages to install
 yes_or_no_question "i3wm" && I3WM="true"  
 yes_or_no_question "Latex" && LATEX="true"
 yes_or_no_question "Docker" && DOCKER="true"
@@ -47,9 +48,9 @@ yes_or_no_question "Pytorch" && PYTORCH="true"
 yes_or_no_question "Tensorflow" && TENSORFLOW="true"
 
 echo_message "UPDATING PACMAN PACKAGES"
-
 sudo pacman -S --needed archlinux-keyring && sudo pacman -Syu --noconfirm
 
+# only runs if paru is not installed
 if ! paru --version ; then
     echo_message "INSTALLING PARU"
     FOLDER=$(pwd)
@@ -62,39 +63,26 @@ if ! paru --version ; then
 fi
 
 echo_message "CLONE CONFIGURATION REPOSITORY"
-
 mkdir ~/repos
 cd ~/repos
 git clone https://github.com/tamagusko/linux-cfg.git
 cd linux-cfg
 
 echo_message "INSTALLING PACMAN PACKAGES"
-
 xargs sudo pacman -S --needed < packages.txt --noconfirm 
 
 echo_message "INSTALLING AUR PACKAGES"
-
 xargs paru -S --noconfirm --needed < packages-AUR.txt 
 
-echo_message "SECURE LINUX"
-
+echo_message "ENABLE FIREWALL"
 ## enable Firewall
 ufw allow 80/tcp
 ufw allow 443/tcp
 ufw default deny incoming
 ufw default allow outgoing
 ufw enable
-
 sudo systemctl enable ufw
 sudo systemctl start ufw
-
-# --- Harden /etc/sysctl.conf
-sysctl kernel.modules_disabled=1
-sysctl -a
-sysctl -A
-sysctl mib
-sudo sysctl net.ipv4.conf.all.rp_filter
-sudo sysctl -a --pattern 'net.ipv4.conf.(eth|wlan)0.arp'
 
 ## nvidia drivers
 #echo_message "INSTALL NVIDIA DRIVERS"
@@ -103,14 +91,13 @@ sudo sysctl -a --pattern 'net.ipv4.conf.(eth|wlan)0.arp'
 
 #sudo pacman -S nvidia nvidia-dkms nvidia-utils nvidia-settings
 
+# i3wm instalation
 if I3WM; then
   echo_message "LOADING CONFIGURATION FILES"
   cp -r ~/repos/linux-cfg/dotfiles/* ~/.config/
 fi
 
-
 echo_message "INSTALLING EXTRA SCRIPTS"
-
 sh ~/repos/linux-cfg/scripts/fix-cedilla.sh
 sh ~/repos/linux-cfg/scripts/zsh.sh
 sh ~/repos/linux-cfg/scripts/neovim.sh

@@ -1,8 +1,8 @@
 # Todo:
 
 1. modularize.
-3. refactor.
-4. install without endeavourOS layer.
+2. refactor.
+3. install without endeavourOS layer.
 
 ## Arch i3wm:
 1. Actualize dotfiles  
