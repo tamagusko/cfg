@@ -2,8 +2,8 @@
 
 # WARNING: For personal use only, use at your own risk.
 
-VERSION="0.1.0"
-DATE="2022-10-15"
+VERSION="0.2.0"
+DATE="2022-10-20"
 AUTHOR="Tiago Tamagusko"
 CONTACT="tamagusko@gmail.com"
 
@@ -38,6 +38,8 @@ echo
 
 git clone --depth=1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/opt/packer.nvim
 git clone --depth=1 https://github.com/jdhao/nvim-config.git ~/.config/nvim
+# set capslock as escape
+echo "setxkbmap -option 'caps:escape'" >>~/.zshrc
 
 echo
 echo "COPILOT CONFIGURATION"
