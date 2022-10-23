@@ -25,6 +25,8 @@ echo
 
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
+chsh -s /bin/zsh
+
 # add aliases to zsh
 echo "alias cd..='cd ..'" >>~/.zshrc
 echo "alias h=history" >>~/.zshrc
