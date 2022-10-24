@@ -215,7 +215,7 @@ bindsym Print exec maim ~/Pictures/$(date +"%Y-%m-%d-%T")-screenshot.png  && not
 # bindsym ctrl+Mod1+s exec maim ~/Pictures/$(date +"%Y-%m-%d-%T")-screenshot.png  && notify-send "Screenshot saved to ~/Pictures/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
 # Power Profiles menu switcher (rofi)
-bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
+#bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 
 ##########################################
 # configuration for workspace behaviour: #
@@ -256,7 +256,7 @@ assign [class=kitty] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [title="Visual Studio Code"] $ws3
 assign [class=Thunar] $ws4
-assign [class=TeXstudio|ghostwriter] $ws5
+assign [class=TeXstudio|ghostwriter|Zotero|(?i)obsidian] $ws5
 assign [title="LibreOffice*"] $ws5
 assign [class=Slack|Teams] $ws6
 assign [class=zoom] $ws7
@@ -266,7 +266,7 @@ assign [class=btop|htop] $ws8
 for_window [class=kitty] focus
 for_window [class=(?i)firefox] focus
 for_window [title="Visual Studio Code"] focus
-for_window [class=TeXstudio|ghostwriter] focus
+for_window [class=TeXstudio|ghostwriter|(?i)obsidian] focus
 for_window [title="LibreOffice*"] focus
 for_window [class=Thunar] focus
 for_window [class=Slack|Teams] focus
@@ -297,7 +297,7 @@ for_window [class=btop|htop] focus
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
 #
 # using default config 
-exec_always --no-startup-id picom -b
+# exec_always --no-startup-id picom -b
 #
 # for custom config:
 #exec_always --no-startup-id picom --config  ~/.config/picom.conf
@@ -441,7 +441,7 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
 bar {
-		font pango: Noto Sans Regular 12, FontAwesome 12
+		font pango: Noto Sans Regular 14, FontAwesome 12
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	    	position top
 #	    	i3bar_command i3bar --transparency
