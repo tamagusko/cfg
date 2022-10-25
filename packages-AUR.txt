@@ -6,5 +6,6 @@ teams
 texstudio
 timeshift-bin
 visual-studio-code-bin
+obsidian
 zathura-pdf-mupdf
 zoom
