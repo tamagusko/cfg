@@ -5,6 +5,7 @@ slack-desktop
 teams
 texstudio
 timeshift-bin
+ttf-meslo-nerd-font-powerlevel10k
 visual-studio-code-bin
 obsidian
 zathura-pdf-mupdf
