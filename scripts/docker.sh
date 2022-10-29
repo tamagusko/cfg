@@ -16,7 +16,7 @@ echo
 echo "DOCKER INSTALATION"
 echo
 
-paru -S --noconfirm docker 
+paru -S --noconfirm docker docker-compose 
 sudo docker version 
 
 echo
@@ -27,7 +27,6 @@ sudo systemctl start docker.service
 sudo systemctl enable docker.service
 sudo usermod -aG docker $USER
 
-clear
 echo
 echo "--------------------------------------------------"
 echo "DOCKER INSTALLED! REBOOT TO USE. HAVE FUN!"
