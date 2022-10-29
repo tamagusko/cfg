@@ -40,6 +40,9 @@ echo "alias python=python3" >>~/.zshrc
 echo "alias vmk38='python3.8 -m venv venv'"
 echo "alias py38=python3.8"
 
+# set capslock as escape
+echo "setxkbmap -layout us -option caps:escape"
+
 # add plugins to zsh
 sudo sed -i 's/plugins=(git)/plugins=(git sudo vscode gitfast command-not-found gitignore heroku taskwarrior fzf zsh-syntax-highlighting zsh-autosuggestions colored-man-pages virtualenv)/' ~/.zshrc
 
