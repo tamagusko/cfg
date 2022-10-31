@@ -37,8 +37,8 @@ echo "alias gitignorebig='find . -size +100M | cat >> .gitignore'" >>~/.zshrc
 echo "alias vac='source venv/bin/activate'" >>~/.zshrc
 echo "alias vmk='python3 -m virtualenv .venv'" >>~/.zshrc
 echo "alias python=python3" >>~/.zshrc
-echo "alias vmk38='python3.8 -m venv venv'"
-echo "alias py38=python3.8"
+echo "alias vmk38='python3.8 -m venv venv'" >>~/.zshrc
+echo "alias py38=python3.8" >>~/.zshrc
 
 # set capslock as escape
 echo "setxkbmap -layout us -option caps:escape"
