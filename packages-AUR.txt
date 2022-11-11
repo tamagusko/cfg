@@ -10,3 +10,4 @@ visual-studio-code-bin
 obsidian
 zathura-pdf-mupdf
 zoom
+python39
