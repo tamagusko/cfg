@@ -260,7 +260,7 @@ assign [title="Visual Studio Code"] $ws3
 assign [class=Thunar] $ws4
 assign [class=TeXstudio|ghostwriter|Zotero|(?i)obsidian] $ws5
 assign [title="LibreOffice*"] $ws5
-assign [class=Slack|Teams] $ws6
+assign [class=Slack|Teams|TeamViewer] $ws6
 assign [class=zoom] $ws7
 assign [class=btop|htop] $ws8
 
