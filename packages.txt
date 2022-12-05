@@ -6,9 +6,7 @@ hunspell
 hunspell-en_us
 jupyterlab
 jupyter-notebook
-kitty
 maim
-micro
 neovim
 papirus-icon-theme
 python-neovim
