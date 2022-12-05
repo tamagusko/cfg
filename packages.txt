@@ -6,12 +6,10 @@ hunspell
 hunspell-en_us
 jupyterlab
 jupyter-notebook
-maim
 neovim
 python-neovim
 python-pip
 python-setuptools
-ranger
 ufw
 vim
 zathura
