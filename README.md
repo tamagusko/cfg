@@ -4,7 +4,7 @@
 
 ## Steps:
 
-1. Install [EndeavourOS](https://endeavouros.com/), and choose i3wm edition.
+1. Install [EndeavourOS](https://endeavouros.com/), and choose i3wm or bspwm edition.
 
 2. Run the script for automatic configuration.
 
