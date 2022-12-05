@@ -8,7 +8,6 @@ jupyterlab
 jupyter-notebook
 maim
 neovim
-papirus-icon-theme
 python-neovim
 python-pip
 python-setuptools
