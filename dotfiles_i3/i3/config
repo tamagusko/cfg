@@ -1,4 +1,27 @@
+# This file is a modified version based on default i3-config-wizard config
+# source is available here:
+# https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/master/.config/i3/config
+# Maintainer: joekamprad [joekamprad@endeavouros.com]
+# https://endeavouros.com
+#
+# iconic font icon search: https://fontawesome.com/v4.7/cheatsheet/
+#
+# --> to update this run the following command (will backup existing setup file)
+# wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/config -P ~/.config/i3/
+#
+# Endeavouros-i3 config file
+# Source for complete framework of our i3 config and theming here: https://github.com/endeavouros-team/endeavouros-i3wm-setup
+# EndeavourOS wiki holds some Information also: https://discovery.endeavouros.com/window-tiling-managers/i3-wm/
+# Please see http://i3wm.org/docs/userguide.html for the official i3 reference!
+
+#######################
+# config starts here: #
+#######################
+
 # Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: Noto Sans Regular 16
 
 # set the mod key to the winkey:
@@ -10,7 +33,13 @@ set $mod Mod4
 
 # default i3 tiling mode:
 workspace_layout default
+
+# i3 stacking layout:
+# Each window will be fullscreen and tabbed top to bottom.
 #workspace_layout stacking
+
+# i3 tabbed layout:
+# Each new window will open fullscreen as a tab (left to right)
 #workspace_layout tabbed
 
 ##############################
@@ -20,7 +49,7 @@ workspace_layout default
 #border indicator on windows:
 # new_window pixel 2
 # Window border (all windows)
-for_window [class="^.*"] border pixel 4	
+for_window [class="^.*"] border pixel 2	
 
 # thin borders
 # hide_edge_borders both
@@ -33,7 +62,7 @@ gaps outer 2
 #default_border normal
 
 # window title alignment
-# title_align center
+#title_align center
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -225,7 +254,7 @@ set $ws8 "8:"
 #workspace $ws5 output HDMI-0
 
 # bind program to workspace and focus to them on startup:
-assign [class=xfce4-terminal] $ws1
+assign [class=Xfce4-terminal] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [title="Visual Studio Code"] $ws3
 assign [class=Thunar] $ws4
@@ -236,10 +265,10 @@ assign [class=zoom] $ws7
 assign [class=btop|htop] $ws8
 
 # automatic set focus new window if it opens on another workspace then the current:
-for_window [class=xfce4-terminal] focus
+for_window [class=Xfce4-terminal] focus
 for_window [class=(?i)firefox] focus
 for_window [title="Visual Studio Code"] focus
-for_window [class=TeXstudio|ghostwriter|(?i)obsidian] focus
+for_window [class=TeXstudio|ghostwriterq|(?i)obsidian] focus
 for_window [title="LibreOffice*"] focus
 for_window [class=Thunar] focus
 for_window [class=Slack|Teams] focus
@@ -374,7 +403,7 @@ for_window [class="Pamac-manager"] floating enable
 for_window [window_role="About"] floating enable
 
 # set border of floating window
-# for_window [class="urxvt"] border pixel 2
+for_window [class="urxvt"] border pixel 1
 
 # set size of floating window
 #for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog

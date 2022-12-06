@@ -10,6 +10,7 @@ neovim
 python-neovim
 python-pip
 python-setuptools
+kitty
 ufw
 vim
 zathura
