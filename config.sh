@@ -10,7 +10,6 @@ AUTHOR="Tiago Tamagusko"
 CONTACT="tamagusko@gmail.com"
 
 I3WM="false"
-BSPWM='false'
 LATEX="false"
 DOCKER="false"
 PYTORCH="false"
@@ -43,7 +42,6 @@ echo "---------------------------------------------------------"
 
 # ask for extra packages to install
 yes_or_no_question "i3wm" && I3WM="true"
-yes_or_no_question "Bspwm" && BSPWM="true"    
 yes_or_no_question "Latex" && LATEX="true"
 yes_or_no_question "Docker" && DOCKER="true"
 yes_or_no_question "Pytorch" && PYTORCH="true"
@@ -67,8 +65,8 @@ fi
 echo_message "CLONE CONFIGURATION REPOSITORY"
 mkdir ~/repos
 cd ~/repos
-git clone https://github.com/tamagusko/linux-cfg.git
-cd linux-cfg
+git clone https://github.com/tamagusko/cfg.git
+cd cfg
 
 echo_message "INSTALLING PACMAN PACKAGES"
 xargs sudo pacman -S --needed < packages.txt --noconfirm 
@@ -96,38 +94,32 @@ sudo systemctl start ufw
 # i3wm instalation
 if I3WM; then
   echo_message "LOADING CONFIGURATION FILES"
-  cp -r ~/repos/linux-cfg/dotfiles_i3/* ~/.config/
-fi
-
-# i3wm instalation
-if BSPWM; then
-  echo_message "LOADING CONFIGURATION FILES"
-  cp -r ~/repos/linux-cfg/dotfiles_bspwm/* ~/.config/
+  cp -r ~/repos/cfg/dotfiles/* ~/.config/
 fi
 
 # copy all generic configs
-cp -r ~/repos/linux-cfg/dotfiles_generic/* ~/.config/
+cp -r ~/repos/cfg/dotfiles/* ~/.config/
 
 echo_message "INSTALLING EXTRA SCRIPTS"
-sh ~/repos/linux-cfg/scripts/fix-cedilla.sh
-sh ~/repos/linux-cfg/scripts/zsh.sh
-sh ~/repos/linux-cfg/scripts/neovim.sh
-sh ~/repos/linux-cfg/scripts/ghostwriter.sh
+sh ~/repos/cfg/scripts/fix-cedilla.sh
+sh ~/repos/cfg/scripts/zsh.sh
+sh ~/repos/cfg/scripts/neovim.sh
+sh ~/repos/cfg/scripts/ghostwriter.sh
 
 if $LATEX; then
-  sh ~/repos/linux-cfg/scripts/latex.sh
+  sh ~/repos/cfg/scripts/latex.sh
 fi
   
 if $DOCKER; then
-  sh ~/repos/linux-cfg/scripts/docker.sh
+  sh ~/repos/cfg/scripts/docker.sh
 fi
 
 if $TENSORFLOW; then
-  sh ~/repos/linux-cfg/scripts/tensorflow-cuda.sh
+  sh ~/repos/cfg/scripts/tensorflow-cuda.sh
 fi
 
 if $PYTORCH; then
-  sh ~/repos/linux-cfg/scripts/pytorch.sh
+  sh ~/repos/cfg/scripts/pytorch.sh
 fi
 
 echo_message "BACKUP OF INSTALLATION SCRIPTS ~/repos/cfg"
