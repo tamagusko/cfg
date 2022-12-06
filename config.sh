@@ -105,6 +105,9 @@ if BSPWM; then
   cp -r ~/repos/linux-cfg/dotfiles_bspwm/* ~/.config/
 fi
 
+# copy all generic configs
+cp -r ~/repos/linux-cfg/dotfiles_generic/* ~/.config/
+
 echo_message "INSTALLING EXTRA SCRIPTS"
 sh ~/repos/linux-cfg/scripts/fix-cedilla.sh
 sh ~/repos/linux-cfg/scripts/zsh.sh
@@ -127,6 +130,6 @@ if $PYTORCH; then
   sh ~/repos/linux-cfg/scripts/pytorch.sh
 fi
 
-echo_message "BACKUP OF INSTALLATION SCRIPTS ~/repos/linux-cfg"
+echo_message "BACKUP OF INSTALLATION SCRIPTS ~/repos/cfg"
 
 echo_message "INSTALLATION COMPLETED"
