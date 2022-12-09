@@ -1,4 +1,5 @@
 ghostwriter
+rofi-greenclip
 nerd-fonts-hack
 skypeforlinux-stable-bin
 slack-desktop
