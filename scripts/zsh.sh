@@ -1,30 +1,14 @@
 #!/bin/sh
 
-# WARNING: For personal use only, use at your own risk.
+# Tiago Tamagusko 2022
 
-VERSION="0.1.0"
-DATE="2022-10-15"
-AUTHOR="Tiago Tamagusko"
-CONTACT="tamagusko@gmail.com"
-
-echo "------------------------------------------------------------"
-echo "ZSH configuration on Arch Linux v$VERSION ($DATE)"
-echo "by $AUTHOR <$CONTACT>"
-echo "------------------------------------------------------------"
-
-echo
-echo "INSTALL ZSH"
-echo
-
+# Install zsh
 sudo pacman -Syu --noconfirm
 sudo pacman -S --needed zsh fzf --noconfirm
 
-echo
-echo "INSTALL OH-MY-ZSH"
-echo
-
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
+# Set zsh as default
 chsh -s /bin/zsh
 
 # add aliases to zsh
@@ -52,13 +36,6 @@ cd ~/.oh-my-zsh/plugins/
 git clone https://github.com/zsh-users/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions
 
-echo
-echo "INSTALL POWERLEVEL10k"
-echo
-
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 sudo sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k/powerlevel10k"/' ~/.zshrc
 
-echo "--------------------------"
-echo "ZSH CONFIGURED! HAVE FUN!"
-echo "--------------------------"
