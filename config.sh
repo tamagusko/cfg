@@ -2,8 +2,6 @@
 
 # WARNING: For personal use only, use at your own risk.
 
-# This is not a minimal install. This is my customized installation.
-
 VERSION="0.1.0"
 DATE="2022-10-15"
 AUTHOR="Tiago Tamagusko"
