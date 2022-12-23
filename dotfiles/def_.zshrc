@@ -113,7 +113,7 @@ alias gitignorebig='find . -size +100M | cat >> .gitignore'
 alias vac='source venv/bin/activate'
 alias vmk='python3 -m virtualenv venv'
 alias python=python3
-setxkbmap -option 'caps:escape'
+# setxkbmap -option 'caps:escape'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
