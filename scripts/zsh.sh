@@ -26,7 +26,7 @@ echo "alias py39=python3.9" >>~/.zshrc
 echo "# export PATH=/opt/anaconda/bin:$PATH"
 
 # set capslock as escape
-echo "setxkbmap -layout us -option caps:escape"
+echo "# setxkbmap -layout us -option caps:escape"
 
 # add plugins to zsh
 sudo sed -i 's/plugins=(git)/plugins=(git sudo vscode gitfast command-not-found gitignore heroku taskwarrior fzf zsh-syntax-highlighting zsh-autosuggestions colored-man-pages virtualenv)/' ~/.zshrc
