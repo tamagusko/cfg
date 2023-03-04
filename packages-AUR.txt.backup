@@ -1,4 +1,6 @@
 ghostwriter
+rofi-greenclip
+nerd-fonts-hack
 skypeforlinux-stable-bin
 slack-desktop
 teams
@@ -8,4 +10,4 @@ ttf-meslo-nerd-font-powerlevel10k
 visual-studio-code-bin
 zathura-pdf-mupdf
 zoom
-python38
+python39

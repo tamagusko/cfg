@@ -63,8 +63,8 @@ fi
 echo_message "CLONE CONFIGURATION REPOSITORY"
 mkdir ~/repos
 cd ~/repos
-git clone https://github.com/tamagusko/cfg.git
-cd cfg
+git clone https://github.com/tamagusko/linux-cfg.git
+cd linux-cfg
 
 echo_message "INSTALLING PACMAN PACKAGES"
 xargs sudo pacman -S --needed < packages.txt --noconfirm 
