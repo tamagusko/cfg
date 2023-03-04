@@ -8,4 +8,4 @@ ttf-meslo-nerd-font-powerlevel10k
 visual-studio-code-bin
 zathura-pdf-mupdf
 zoom
-python38
+python39
