@@ -10,3 +10,4 @@ zathura-pdf-mupdf
 zoom
 python39
 microsoft-edge-stable-bin
+typora
