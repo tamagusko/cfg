@@ -101,8 +101,7 @@ cp -r ~/repos/cfg/dotfiles/* ~/.config/
 echo_message "INSTALLING EXTRA SCRIPTS"
 sh ~/repos/cfg/scripts/fix-cedilla.sh
 sh ~/repos/cfg/scripts/zsh.sh
-sh ~/repos/cfg/scripts/neovim.sh
-sh ~/repos/cfg/scripts/ghostwriter.sh
+# sh ~/repos/cfg/scripts/neovim.sh
 
 if $LATEX; then
   sh ~/repos/cfg/scripts/latex.sh

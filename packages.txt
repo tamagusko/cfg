@@ -6,9 +6,6 @@ hunspell
 hunspell-en_us
 jupyterlab
 jupyter-notebook
-neovim
-maim
-python-neovim
 python-pip
 python-setuptools
 kitty

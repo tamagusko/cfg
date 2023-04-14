@@ -1,11 +1,12 @@
-ghostwriter
 skypeforlinux-stable-bin
 slack-desktop
 teams
 texstudio
 timeshift-bin
 ttf-meslo-nerd-font-powerlevel10k
+nerd-fonts-fira-code
 visual-studio-code-bin
 zathura-pdf-mupdf
 zoom
 python39
+microsoft-edge-stable-bin
