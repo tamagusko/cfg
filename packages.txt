@@ -9,6 +9,7 @@ jupyter-notebook
 maim
 python-pip
 python-setuptools
+translate-shell
 kitty
 ufw
 vim
