@@ -246,16 +246,18 @@ set $ws8 "8:"
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
-#workspace $ws1 output VGA-0
-#workspace $ws2 output VGA-0
-#workspace $ws3 output HDMI-0
-#workspace $ws4 output HDMI-0
-#workspace $ws5 output HDMI-0
+# workspace $ws1 output HDMI-0
+# workspace $ws2 output HDMI-1
+# workspace $ws3 output HDMI-1
+# workspace $ws4 output HDMI-0
+# workspace $ws5 output HDMI-1
+# workspace $ws6 output HDMI-0
+# workspace $ws7 output HDMI-0
+# workspace $ws7 output HDMI-0
 
 # bind program to workspace and focus to them on startup:
 assign [class=kitty] $ws1
 assign [class=(?i)microsoft-edge] $ws2
-# assign [class=code] $ws3
 assign [title="Visual Studio Code"] $ws3
 assign [class=Thunar] $ws4
 assign [class=TeXstudio|ghostwriter|Zotero|(?i)obsidian] $ws5
@@ -267,7 +269,6 @@ assign [class=btop|htop] $ws8
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=kitty] focus
 for_window [class=(?i)microsoft-edge] focus
-# for_window [class=code] focus
 for_window [title="Visual Studio Code"] focus
 for_window [class=TeXstudio|ghostwriter|(?i)obsidian] focus
 for_window [title="LibreOffice*"] focus
